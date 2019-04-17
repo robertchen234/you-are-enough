@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 
 class App extends Component {
-  state = { bg: "2", bg2: "1", quote: "Be yourself", top: true };
+  state = { bg: "2", bg2: "1", quote: "Be yourself" };
 
   change = () => {
     const bgOptions = [
@@ -72,8 +72,7 @@ class App extends Component {
       this.setState({
         bg2: bgOptions[Math.floor(Math.random() * bgOptions.length)],
         bg: bgOptions[Math.floor(Math.random() * bgOptions.length)],
-        quote: quoteOptions[Math.floor(Math.random() * quoteOptions.length)],
-        top: !this.state.top
+        quote: quoteOptions[Math.floor(Math.random() * quoteOptions.length)]
       });
     }, 5000);
   };
@@ -84,14 +83,8 @@ class App extends Component {
     return (
       <div className="app">
         <section>
-          <img
-            className={`${this.state.top ? "top" : "bottom"}`}
-            src={bgImage}
-          />
-          <img
-            className={`${this.state.top ? "bottom" : "top"}`}
-            src={bg2Image}
-          />
+          <img className="bottom" src={bg2Image} />
+          <img className="top" src={bgImage} />
         </section>
         <div className="text">
           <h1 className="title">You are enough.</h1>
